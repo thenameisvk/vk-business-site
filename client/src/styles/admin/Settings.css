@@ -1,0 +1,163 @@
+/* ==========================================================================
+   SETTINGS + VIEW CUSTOMER — page-specific styles
+   Requires AdminTheme.css (imported automatically by AdminUI.jsx)
+   ========================================================================== */
+
+/* ---------- Settings page ---------- */
+.st-head-actions { display: flex; gap: var(--sp-2); flex-wrap: wrap; }
+.st-card { display: flex; flex-direction: column; gap: var(--sp-4); }
+
+.st-toolbar { display: flex; align-items: center; gap: var(--sp-3); flex-wrap: wrap; }
+.st-toolbar .adm-search { flex: 1 1 280px; }
+.st-sort { width: auto; min-width: 170px; }
+
+.st-filter-panel {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) auto;
+  gap: var(--sp-4);
+  align-items: end;
+  padding: var(--sp-4);
+  background: var(--adm-surface-2);
+  border: 1px solid var(--adm-border);
+  border-radius: var(--adm-r-md);
+  animation: adm-fade 0.18s ease both;
+}
+.st-filter-reset { align-self: end; }
+
+.st-bulk {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3); flex-wrap: wrap;
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--adm-red-soft);
+  border: 1px solid var(--adm-red-line);
+  border-radius: var(--adm-r-md);
+}
+.st-bulk-actions { display: flex; gap: var(--sp-2); flex-wrap: wrap; }
+
+.st-key { display: inline-flex; align-items: center; gap: 4px; color: var(--adm-gold); }
+.st-cash {
+  display: inline-grid; place-items: center; min-width: 36px; height: 26px; padding: 0 8px;
+  border-radius: 6px; background: var(--adm-gold-soft); border: 1px solid rgba(212, 175, 55, 0.3);
+  color: var(--adm-gold); font: 600 0.82rem var(--adm-font-display);
+}
+.st-del:hover { background: var(--adm-danger) !important; color: #fff !important; }
+
+.st-key-anatomy { display: grid; grid-template-columns: auto 1fr auto; gap: var(--sp-2); }
+.st-key-anatomy span {
+  display: flex; flex-direction: column; gap: 2px; padding: var(--sp-2) var(--sp-3);
+  background: var(--adm-surface-2); border: 1px solid var(--adm-border); border-radius: var(--adm-r-sm);
+}
+.st-key-anatomy b { color: var(--adm-gold); font-family: ui-monospace, Consolas, monospace; font-size: 0.9rem; }
+.st-key-anatomy small { color: var(--adm-text-3); font-size: 0.72rem; }
+
+/* ---------- View customer ---------- */
+.vc { display: flex; flex-direction: column; gap: var(--sp-5); animation: adm-fade 0.25s ease both; }
+.vc-top { display: flex; }
+.vc-back { padding-left: 8px; }
+
+.vc-header { display: flex; align-items: center; gap: var(--sp-4); flex-wrap: wrap; border-top: 3px solid var(--adm-red); }
+.vc-id { flex: 1 1 260px; min-width: 0; }
+.vc-id .adm-title { overflow-wrap: anywhere; }
+.vc-meta { display: flex; gap: var(--sp-2); flex-wrap: wrap; align-items: center; margin-top: var(--sp-2); }
+.vc-chip {
+  display: inline-flex; align-items: center; gap: 8px; padding: 5px 12px;
+  background: var(--adm-surface-2); border: 1px solid var(--adm-border); border-radius: 999px;
+  color: var(--adm-text-2); font: 400 0.82rem var(--adm-font);
+}
+.vc-chip i { color: var(--adm-red); }
+.vc-chip .adm-mono { color: var(--adm-gold); }
+.vc-chip--btn { cursor: pointer; }
+.vc-chip--btn:hover { border-color: var(--adm-red-line); color: var(--adm-text); }
+.vc-header-actions { display: flex; gap: var(--sp-2); flex-wrap: wrap; }
+
+.vc-tabs { align-self: flex-start; }
+
+.vc-summary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--sp-4); }
+.vc-stat {
+  display: grid; grid-template-columns: auto 1fr; grid-template-areas: "icon label" "icon value";
+  column-gap: var(--sp-3); align-items: center;
+  padding: var(--sp-4) var(--sp-5);
+  background: var(--adm-surface); border: 1px solid var(--adm-border); border-radius: var(--adm-r-lg);
+}
+.vc-stat i {
+  grid-area: icon; width: 44px; height: 44px; display: grid; place-items: center;
+  border-radius: var(--adm-r-sm); background: var(--adm-red-soft); color: var(--adm-red-hover); font-size: 1.25rem;
+}
+.vc-stat small { grid-area: label; color: var(--adm-text-3); font-size: 0.8rem; }
+.vc-stat strong { grid-area: value; font: 600 1.4rem/1.2 var(--adm-font-display); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.vc-stat--due strong { color: var(--adm-red-hover); }
+
+.vc-progress-label { display: flex; justify-content: space-between; align-items: center; gap: var(--sp-3); flex-wrap: wrap; margin-bottom: var(--sp-3); color: var(--adm-text-2); font-size: 0.9rem; }
+.vc-progress-label span { display: inline-flex; align-items: center; gap: var(--sp-2); flex-wrap: wrap; }
+.vc-progress-label i { color: var(--adm-gold); }
+.vc-progress-label strong { font: 600 1.2rem var(--adm-font-display); color: var(--adm-gold); }
+.vc-bar { height: 10px; background: var(--adm-bg); border-radius: 999px; overflow: hidden; border: 1px solid var(--adm-border); }
+.vc-bar-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--adm-red), var(--adm-gold)); transition: width 0.6s var(--adm-ease); }
+.vc-next { margin: var(--sp-3) 0 0; display: flex; align-items: center; gap: var(--sp-2); color: var(--adm-text-2); font-size: 0.85rem; }
+.vc-next.is-overdue { color: var(--adm-danger); }
+
+.vc-terms { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: var(--sp-4); padding-bottom: var(--sp-4); }
+.vc-terms div { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.vc-terms small { color: var(--adm-text-3); font-size: 0.78rem; }
+.vc-terms strong { font: 600 1rem var(--adm-font-display); font-variant-numeric: tabular-nums; }
+.vc-terms-grand strong { color: var(--adm-red-hover); font-size: 1.2rem; }
+.vc-note {
+  display: flex; align-items: flex-start; gap: var(--sp-2); margin: 0 0 var(--sp-5);
+  padding: var(--sp-2) var(--sp-3); font-size: 0.8rem; color: var(--adm-text-2);
+  background: var(--adm-gold-soft); border-left: 3px solid var(--adm-gold); border-radius: 4px;
+}
+.vc-pay-head { margin-bottom: var(--sp-3); padding-top: var(--sp-4); border-top: 1px solid var(--adm-border); }
+.vc-loan-actions { display: flex; gap: var(--sp-2); flex-wrap: wrap; }
+.vc .st-toolbar { margin-bottom: var(--sp-4); }
+
+.vc-paid { color: var(--adm-success); font-weight: 600; font-variant-numeric: tabular-nums; }
+.vc-bal { color: var(--adm-text-2); font-variant-numeric: tabular-nums; }
+.vc-note-cell { color: var(--adm-text-2); max-width: 220px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.vc-preview {
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-2) var(--sp-5);
+  padding: var(--sp-3) var(--sp-4); background: var(--adm-gold-soft);
+  border-left: 3px solid var(--adm-gold); border-radius: var(--adm-r-sm); color: var(--adm-text-2); font-size: 0.88rem;
+}
+.vc-preview i { color: var(--adm-gold); font-size: 1.1rem; }
+.vc-preview strong { color: var(--adm-gold); margin-left: 4px; }
+
+/* Messages */
+.vc-thread { display: flex; flex-direction: column; gap: var(--sp-3); min-height: 180px; max-height: 50vh; }
+.vc-msg { max-width: 82%; padding: var(--sp-3) var(--sp-4); border-radius: var(--adm-r-md); background: var(--adm-surface-2); border: 1px solid var(--adm-border); }
+.vc-msg p { margin: 0 0 4px; font-size: 0.9rem; line-height: 1.45; overflow-wrap: anywhere; }
+.vc-msg small { color: var(--adm-text-3); font-size: 0.72rem; }
+.vc-msg--customer { align-self: flex-start; border-bottom-left-radius: 4px; }
+.vc-msg--admin { align-self: flex-end; background: var(--adm-red-soft); border-color: var(--adm-red-line); border-bottom-right-radius: 4px; }
+.vc-composer { display: flex; flex-direction: column; gap: var(--sp-2); width: 100%; }
+.vc-composer-row { display: flex; gap: var(--sp-2); }
+.vc-composer small { color: var(--adm-text-3); font-size: 0.72rem; text-align: center; }
+
+@media (max-width: 992px) {
+  .vc-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .st-filter-panel { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .st-filter-reset { grid-column: 1 / -1; justify-self: start; }
+}
+@media (max-width: 640px) {
+  .st-head-actions, .vc-header-actions { width: 100%; }
+  .st-head-actions .adm-btn, .vc-header-actions .adm-btn { flex: 1; }
+  .st-toolbar > .adm-btn, .st-sort, .st-toolbar .adm-seg { flex: 1 1 100%; width: 100%; }
+  .st-toolbar .adm-seg button { flex: 1; justify-content: center; }
+  .vc-summary { grid-template-columns: 1fr; gap: var(--sp-3); }
+  .vc-stat { padding: var(--sp-3) var(--sp-4); }
+  .st-filter-panel { grid-template-columns: 1fr; }
+  .vc-loan-actions { width: 100%; }
+  .vc-loan-actions .adm-btn { flex: 1; }
+  .vc-header { padding: var(--sp-4); }
+  .vc-tabs { align-self: stretch; }
+  .vc-msg { max-width: 92%; }
+}
+
+@media (max-width: 860px) { .vc-note-cell { max-width: none; } }
+
+.btn-mark{
+  background-color: green;
+  border: none;
+  padding: 3px 10px;
+  border-radius: 10px;
+  height: 40px;
+}

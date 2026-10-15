@@ -1,0 +1,284 @@
+/* ==========================================================================
+   VK ABOUT — layout only. All colours come from --vk-* variables.
+   ========================================================================== */
+
+.vk-about {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vk-8);
+  padding: var(--vk-8) var(--vk-5);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ---------- Hero ---------- */
+.vk-about-hero {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--vk-3);
+  align-items: center;
+}
+
+.vk-about-title {
+  margin: 0;
+  font: 600 2.1rem/1.15 var(--vk-font-display);
+  letter-spacing: 0.4px;
+  color: var(--vk-text);
+}
+
+.vk-about-title-accent {
+  background: linear-gradient(
+    180deg,
+    var(--vk-gold) 0%,
+    var(--vk-crimson-text) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.vk-about-lead {
+  margin: 0;
+  color: var(--vk-text-2);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ---------- Stats strip ---------- */
+.vk-about-stats {
+  display: grid;
+  gap: var(--vk-4);
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.vk-stat {
+  padding: var(--vk-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--vk-1);
+  text-align: center;
+  background: var(--vk-surface);
+  border: 1px solid var(--vk-border);
+  border-radius: var(--vk-r-md);
+  transition: border-color 0.18s var(--vk-ease), transform 0.18s var(--vk-ease);
+}
+.vk-stat:hover {
+  border-color: var(--vk-border-strong);
+  transform: translateY(-2px);
+}
+
+.vk-stat-value {
+  font: 700 1.8rem var(--vk-font-display);
+  letter-spacing: 0.5px;
+  color: var(--vk-gold);
+}
+
+.vk-stat-label {
+  font-size: 0.82rem;
+  color: var(--vk-text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+/* ---------- Sections ---------- */
+.vk-about-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vk-2);
+}
+
+.vk-about-section .vk-section-title { margin: 0; }
+
+/* ---------- Values grid ---------- */
+.vk-values {
+  display: grid;
+  gap: var(--vk-4);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-top: var(--vk-4);
+}
+
+.vk-value {
+  padding: var(--vk-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--vk-3);
+  background: var(--vk-surface);
+  border: 1px solid var(--vk-border);
+  border-radius: var(--vk-r-md);
+  transition: border-color 0.18s var(--vk-ease),
+              background 0.18s var(--vk-ease),
+              transform 0.18s var(--vk-ease);
+}
+.vk-value:hover {
+  background: var(--vk-surface-2);
+  border-color: var(--vk-crimson-line);
+  transform: translateY(-3px);
+}
+
+.vk-value-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--vk-r-sm);
+  background: var(--vk-crimson-soft);
+  color: var(--vk-crimson-text);
+  border: 1px solid var(--vk-crimson-line);
+}
+
+.vk-value-title {
+  margin: 0;
+  font: 600 1rem var(--vk-font-display);
+  letter-spacing: 0.3px;
+  color: var(--vk-text);
+}
+
+.vk-value-text {
+  margin: 0;
+  color: var(--vk-text-2);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+/* ---------- Steps ---------- */
+.vk-steps {
+  list-style: none;
+  margin: var(--vk-4) 0 0;
+  padding: 0;
+  display: grid;
+  gap: var(--vk-3);
+}
+
+.vk-step {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: var(--vk-4);
+  padding: var(--vk-5);
+  background: var(--vk-surface);
+  border: 1px solid var(--vk-border);
+  border-radius: var(--vk-r-md);
+  align-items: center;
+  transition: border-color 0.18s var(--vk-ease), background 0.18s var(--vk-ease);
+}
+.vk-step:hover {
+  background: var(--vk-surface-2);
+  border-color: var(--vk-border-strong);
+}
+
+.vk-step-num {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--vk-bg);
+  border: 1px solid var(--vk-crimson-line);
+  color: var(--vk-crimson-text);
+  font: 700 1rem var(--vk-font-display);
+  letter-spacing: 1px;
+}
+
+.vk-step-body { display: flex; flex-direction: column; gap: 4px; }
+
+.vk-step-title {
+  margin: 0;
+  font: 600 1rem var(--vk-font-display);
+  letter-spacing: 0.3px;
+  color: var(--vk-text);
+}
+
+.vk-step-text {
+  margin: 0;
+  color: var(--vk-text-2);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+/* ---------- Commitment note ---------- */
+.vk-about-note {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--vk-3);
+  padding: var(--vk-4) var(--vk-5);
+  background: var(--vk-surface-2);
+  border: 1px solid var(--vk-border);
+  border-left: 4px solid var(--vk-crimson);
+  border-radius: var(--vk-r-sm);
+}
+.vk-about-note p {
+  margin: 0;
+  color: var(--vk-text-2);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 900px) {
+  .vk-about-stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .vk-about { padding: var(--vk-6) var(--vk-4); gap: var(--vk-6); }
+  .vk-about-title { font-size: 1.6rem; }
+  .vk-about-lead { font-size: 0.92rem; }
+  .vk-stat-value { font-size: 1.5rem; }
+  .vk-stat { padding: var(--vk-4); }
+
+  .vk-value { padding: var(--vk-4); }
+
+  .vk-step {
+    grid-template-columns: 44px 1fr;
+    padding: var(--vk-4);
+    gap: var(--vk-3);
+  }
+  .vk-step-num {
+    width: 44px;
+    height: 44px;
+    font-size: 0.88rem;
+  }
+
+  .vk-about-note {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--vk-4);
+  }
+}
+
+@media (max-width: 400px) {
+  .vk-about-stats { grid-template-columns: 1fr; }
+}
+
+.typing-warning-container {
+  padding: 2rem 1rem;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.typing-text {
+  font-size: 2.5rem;
+  font-weight: 1000;
+  color: gold; /* Crimson accent matching your theme */
+  line-height: 1;
+  text-transform: uppercase;
+  font-family: system-ui, -apple-system, sans-serif;
+  text-shadow: 2px 2px 5px red;
+  min-height: 3.5rem; /* Prevents layout jump while typing */
+}
+
+.blinking-cursor {
+  font-weight: 500;
+  color: red;
+  animation: cursorBlink 0.8s infinite;
+  margin-left: 2px;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}

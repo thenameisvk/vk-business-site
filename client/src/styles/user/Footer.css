@@ -1,0 +1,80 @@
+/* ==========================================================================
+   FOOTER — uses the shared tokens from Theme.css
+   ========================================================================== */
+
+.vk-footer {
+  width: 100%; 
+  margin-top: var(--vk-10);
+  padding: var(--vk-10) var(--vk-6) var(--vk-5);
+background: black;
+  box-shadow: 0 -14px 40px -12px rgba(229, 23, 63, 0.18);
+  color: var(--vk-text); 
+  font-family: var(--vk-font);
+  box-sizing: border-box;
+}
+.vk-footer *, .vk-footer *::before, .vk-footer *::after { box-sizing: border-box; }
+.vk-footer-inner { max-width: 1320px; margin: 0 auto; }
+
+.vk-footer-grid {
+  display: grid; grid-template-columns: minmax(0, 2fr) repeat(auto-fit, minmax(150px, 1fr)); gap: var(--vk-8) var(--vk-10);
+  padding-bottom: var(--vk-8);
+}
+
+/* Brand */
+.vk-footer-brand { display: flex; flex-direction: column; gap: var(--vk-4); max-width: 380px; }
+.vk-footer-logo { width: 96px; max-width: 100%; height: auto;border-radius: 50%; }
+.vk-footer-brand p { margin: 0; color: var(--vk-text-2); font-size: 0.92rem; line-height: 1.6; }
+
+.vk-social { display: flex; flex-wrap: wrap; gap: var(--vk-2); list-style: none; margin: var(--vk-1) 0 0; padding: 0; }
+.vk-social a {
+  display: grid; place-items: center; width: 44px; height: 44px;       /* 44px touch target */
+  background: var(--vk-surface); color: var(--vk-text-2); text-decoration: none; font-size: 1.1rem;
+  border: 1px solid var(--vk-border); border-radius: var(--vk-r-sm);
+  transition: background 0.2s var(--vk-ease), color 0.2s var(--vk-ease), border-color 0.2s var(--vk-ease), transform 0.2s var(--vk-ease);
+}
+.vk-social a:hover { background: var(--vk-crimson); border-color: var(--vk-crimson); color: #fff; transform: translateY(-2px); }
+
+/* Columns */
+.vk-footer-h { margin: 0 0 var(--vk-4); font: 600 1.02rem var(--vk-font-display); letter-spacing: 0.4px; color: var(--vk-text); }
+.vk-footer-links, .vk-footer-contact { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--vk-1); }
+.vk-footer-links a, .vk-footer-contact a, .vk-footer-contact span {
+  color: var(--vk-text-2); text-decoration: none; font-size: 0.93rem;
+}
+.vk-footer-links a {
+  display: inline-flex; align-items: center; min-height: 36px;
+  background-image: linear-gradient(var(--vk-crimson-text), var(--vk-crimson-text)); background-repeat: no-repeat; background-position: 0 calc(50% + 11px); background-size: 0 1px;
+  transition: color 0.2s, background-size 0.25s var(--vk-ease);
+}
+.vk-footer-links a:hover { color: var(--vk-text); background-size: 100% 1px; }
+.vk-footer-contact li { display: flex; align-items: flex-start; gap: 10px; min-height: 36px; align-items: center; }
+.vk-footer-contact i { color: var(--vk-crimson-text); }
+.vk-footer-contact a:hover { color: var(--vk-text); }
+
+/* Bottom bar */
+.vk-footer-bottom {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--vk-4); flex-wrap: wrap;
+  padding-top: var(--vk-5); border-top: 1px solid var(--vk-border);
+}
+.vk-footer-bottom p { margin: 0; color: var(--vk-text-3); font-size: 0.86rem; }
+.vk-top {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px;
+  background: transparent; color: var(--vk-text-2); border: 1px solid var(--vk-border-strong); border-radius: 999px;
+  font: 500 0.86rem var(--vk-font); cursor: pointer; transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.vk-top:hover { color: #fff; border-color: var(--vk-crimson-line); background: var(--vk-crimson-soft); }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .vk-footer { padding: var(--vk-8) var(--vk-5) var(--vk-5); }
+  .vk-footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--vk-8) var(--vk-6); }
+  .vk-footer-brand { grid-column: 1 / -1; max-width: none; }
+}
+@media (max-width: 520px) {
+  .vk-footer-grid { grid-template-columns: minmax(0, 1fr); }
+  .vk-footer-bottom { flex-direction: column-reverse; align-items: flex-start; }
+  .vk-top { width: 100%; justify-content: center; }
+}
+/* Pages with the floating Pay/Chat dock: keep the footer clear of it on phones */
+@media (max-width: 640px) {
+  body.vk-has-dock .vk-footer { padding-bottom: calc(var(--vk-5) + 84px + env(safe-area-inset-bottom, 0px)); }
+}
