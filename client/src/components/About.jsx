@@ -63,7 +63,7 @@ const STEPS = [
 ];
 
 export default function About() {
-    const [displayedText, setDisplayedText] = useState("");
+  const [displayedText, setDisplayedText] = useState("");
   const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef(null);
 
@@ -153,11 +153,11 @@ export default function About() {
     <section className="vk-scope vk-about" id="about">
         
        <div ref={containerRef} className="typing-warning-container">
-      <h1 className="typing-text">
-        {displayedText}
-        <span className="blinking-cursor">|</span>
-      </h1>
-    </div>
+        <h1 className="typing-text">
+          {displayedText}
+          <span className="blinking-cursor">|</span>
+        </h1>
+      </div>
 
       {/* ---------- Hero ---------- */}
       <header className="vk-about-hero">
@@ -166,7 +166,7 @@ export default function About() {
           Simple lending. <span className="vk-about-title-accent">Honest numbers.</span>
         </h2>
         <p className="vk-about-lead">
-          VK is a small, focused lending service built for people who want clarity — not paperwork.
+          <strong>VK Industries</strong> is a huge, focused lending service built for people who want clarity — not paperwork.
           We show you exactly what you owe, when it is due, and how close you are to closing the account.
           That's it. Nothing hidden, nothing extra.
         </p>
@@ -226,4 +226,4 @@ export default function About() {
       </div>
     </section>
   );
-}
+                            }
