@@ -97,7 +97,7 @@ function Footer() {
         </div>
 
         <div className="vk-footer-bottom">
-          <p>&copy; {year} VK. All rights reserved.</p>
+          <p>&copy; {year} VK | INDUSTRIES . All rights reserved.</p>
           <button type="button" className="vk-top" onClick={toTop}>
             Back to top <i className="bi bi-arrow-up" aria-hidden="true" />
           </button>
